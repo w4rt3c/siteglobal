@@ -533,14 +533,23 @@
                 mensaje: document.getElementById('mensaje').value
             };
             
-            // Simulate form submission (in production, this would call your backend API)
-            console.log('Form submitted:', formData);
+            // In production, this would call your backend API
+            // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
             
-            // Show success message
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            // Show success message with modern toast-style notification
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-check-circle mr-2"></i>¡Mensaje Enviado!';
+            submitButton.classList.remove('bg-neon-green');
+            submitButton.classList.add('bg-green-600');
             
-            // Reset form
-            this.reset();
+            // Reset form and button after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.classList.add('bg-neon-green');
+                submitButton.classList.remove('bg-green-600');
+            }, 3000);
         });
 
         // Smooth scroll for navigation links
