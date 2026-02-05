@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeTech Global - Soluciones Avanzadas de Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#39FF14',
+                        'electric-blue': '#0FF',
+                        'dark-bg': '#0a0e27',
+                        'dark-card': '#1a1f3a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.7), 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+        
+        .glow-border {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-border:hover {
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+            transform: translateY(-5px);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white smooth-scroll">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-neon-green/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-chart-line text-neon-green text-2xl"></i>
+                    <span class="text-2xl font-bold glow-text">TradeTech Global</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-neon-green transition">Inicio</a>
+                    <a href="#servicios" class="hover:text-neon-green transition">Servicios</a>
+                    <a href="#contacto" class="hover:text-neon-green transition">Contacto</a>
+                </div>
+                <button class="md:hidden text-neon-green">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text">
+                    El Futuro del Trading
+                    <span class="block text-electric-blue">Está Aquí</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                    Tecnología avanzada de inteligencia artificial y análisis en tiempo real para maximizar tus operaciones en los mercados financieros
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
+                    <a href="#servicios" class="bg-neon-green text-dark-bg font-bold px-8 py-4 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105">
+                        Descubre Nuestros Servicios
+                    </a>
+                    <a href="#contacto" class="border-2 border-electric-blue text-electric-blue font-bold px-8 py-4 rounded-lg hover:bg-electric-blue hover:text-dark-bg transition">
+                        Contáctanos
+                    </a>
+                </div>
+                
+                <!-- Value Propositions -->
+                <div class="grid md:grid-cols-3 gap-6 mt-16">
+                    <div class="card-gradient p-6 rounded-lg glow-border">
+                        <i class="fas fa-shield-alt text-neon-green text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Seguridad Total</h3>
+                        <p class="text-gray-400">Sin permisos de retiro, tu capital siempre protegido</p>
+                    </div>
+                    <div class="card-gradient p-6 rounded-lg glow-border">
+                        <i class="fas fa-robot text-electric-blue text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Automatización 24/7</h3>
+                        <p class="text-gray-400">Trading sin emociones, sin descanso</p>
+                    </div>
+                    <div class="card-gradient p-6 rounded-lg glow-border">
+                        <i class="fas fa-chart-line text-neon-green text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Análisis en Tiempo Real</h3>
+                        <p class="text-gray-400">Información actualizada al instante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-gradient-to-b from-dark-bg to-dark-card">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text">Nuestros Servicios</h2>
+                <p class="text-xl text-gray-400">Soluciones tecnológicas de vanguardia para traders profesionales</p>
+            </div>
+
+            <!-- RSS News Service -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-rss text-electric-blue text-5xl mr-4"></i>
+                            <h3 class="text-3xl font-bold">Terminal de Noticias RSS y Tendencias</h3>
+                        </div>
+                        <p class="text-xl text-gray-300 mb-6">
+                            Mantente un paso adelante del mercado con nuestro feed inteligente de noticias en tiempo real. 
+                            Anticipa movimientos antes que la competencia.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-filter text-neon-green text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Filtros Personalizados por Activo</h4>
+                                    <p class="text-gray-400">Filtra noticias específicas para BTC, ETH, divisas, commodities y más. Solo ve lo que importa para tu estrategia.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-brain text-electric-blue text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Análisis de Sentimiento IA</h4>
+                                    <p class="text-gray-400">Indicadores visuales en tiempo real que muestran si la tendencia de noticias es alcista (Bullish) o bajista (Bearish).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-bolt text-neon-green text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Actualización Instantánea</h4>
+                                    <p class="text-gray-400">Las noticias fluyen dinámicamente en tu panel, permitiéndote tomar decisiones informadas al instante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-gradient p-8 rounded-xl glow-border">
+                        <div class="space-y-4">
+                            <div class="bg-dark-bg/50 p-4 rounded-lg border-l-4 border-neon-green">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold">BTC alcanza nuevo máximo histórico</span>
+                                    <span class="text-neon-green text-sm">Hace 2 min</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-neon-green/20 text-neon-green px-2 py-1 rounded">BULLISH</span>
+                                    <span class="text-gray-400 text-sm">BTC</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-dark-bg/50 p-4 rounded-lg border-l-4 border-red-500">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold">Regulación cripto en discusión en EU</span>
+                                    <span class="text-gray-400 text-sm">Hace 15 min</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-red-500/20 text-red-500 px-2 py-1 rounded">BEARISH</span>
+                                    <span class="text-gray-400 text-sm">ETH, BTC</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-dark-bg/50 p-4 rounded-lg border-l-4 border-electric-blue">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold">Nueva plataforma DeFi lanza token</span>
+                                    <span class="text-gray-400 text-sm">Hace 1 hora</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-electric-blue/20 text-electric-blue px-2 py-1 rounded">NEUTRAL</span>
+                                    <span class="text-gray-400 text-sm">DeFi</span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center pt-4">
+                                <p class="text-sm text-gray-500 pulse-animation">
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                    Actualizando en tiempo real...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Bot Service -->
+            <div class="mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 card-gradient p-8 rounded-xl glow-border">
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold mb-4 text-neon-green">Beneficios de Automatización</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 bg-dark-bg/50 p-3 rounded">
+                                    <i class="fas fa-check-circle text-neon-green"></i>
+                                    <span>Eliminación total del sesgo emocional</span>
+                                </div>
+                                <div class="flex items-center space-x-3 bg-dark-bg/50 p-3 rounded">
+                                    <i class="fas fa-check-circle text-neon-green"></i>
+                                    <span>Ejecución a velocidad de milisegundos</span>
+                                </div>
+                                <div class="flex items-center space-x-3 bg-dark-bg/50 p-3 rounded">
+                                    <i class="fas fa-check-circle text-neon-green"></i>
+                                    <span>Backtesting con datos históricos</span>
+                                </div>
+                                <div class="flex items-center space-x-3 bg-dark-bg/50 p-3 rounded">
+                                    <i class="fas fa-check-circle text-neon-green"></i>
+                                    <span>Operación 24/7 sin supervisión</span>
+                                </div>
+                                <div class="flex items-center space-x-3 bg-dark-bg/50 p-3 rounded">
+                                    <i class="fas fa-check-circle text-neon-green"></i>
+                                    <span>Diversificación automática de portafolio</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-electric-blue/10 border border-electric-blue rounded-lg">
+                            <h5 class="font-bold mb-2 text-electric-blue">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                Seguridad Garantizada
+                            </h5>
+                            <p class="text-sm text-gray-300">
+                                El bot solo tiene permisos de lectura y ejecución de órdenes. 
+                                <strong>No puede retirar fondos de tu exchange.</strong> Tu capital siempre está bajo tu control.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 md:order-2">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-robot text-neon-green text-5xl mr-4"></i>
+                            <h3 class="text-3xl font-bold">Bot de Trading Algorítmico</h3>
+                        </div>
+                        <p class="text-xl text-gray-300 mb-6">
+                            Deja que la tecnología trabaje por ti. Nuestro bot ejecuta estrategias sofisticadas 
+                            mientras tú duermes, sin emociones, con precisión milimétrica.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-clock text-neon-green text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Ejecución 24/7</h4>
+                                    <p class="text-gray-400">Opera sin descanso en todos los mercados, capturando oportunidades las 24 horas del día.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-cogs text-electric-blue text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Estrategias Preconfiguradas</h4>
+                                    <p class="text-gray-400">
+                                        <strong>DCA (Dollar Cost Averaging):</strong> Compras programadas para reducir volatilidad.<br>
+                                        <strong>Grid Trading:</strong> Aprovecha fluctuaciones en rangos definidos.<br>
+                                        <strong>Arbitraje:</strong> Explota diferencias de precio entre exchanges.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-network-wired text-neon-green text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Compatibilidad Multi-Exchange</h4>
+                                    <p class="text-gray-400">Conecta con Binance, Coinbase Pro, Kraken, Bitfinex y más. Un solo bot para todas tus cuentas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Specs -->
+            <div class="card-gradient p-8 rounded-xl glow-border">
+                <h3 class="text-2xl font-bold mb-6 text-center">Especificaciones Técnicas</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <i class="fas fa-tachometer-alt text-neon-green text-3xl mb-3"></i>
+                        <p class="font-bold">Latencia Ultra Baja</p>
+                        <p class="text-sm text-gray-400">&lt; 50ms</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-server text-electric-blue text-3xl mb-3"></i>
+                        <p class="font-bold">Infraestructura Cloud</p>
+                        <p class="text-sm text-gray-400">99.9% Uptime</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-lock text-neon-green text-3xl mb-3"></i>
+                        <p class="font-bold">Encriptación AES-256</p>
+                        <p class="text-sm text-gray-400">Nivel Bancario</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-sync text-electric-blue text-3xl mb-3"></i>
+                        <p class="font-bold">API REST + WebSocket</p>
+                        <p class="text-sm text-gray-400">Tiempo Real</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text">Contáctanos</h2>
+                <p class="text-xl text-gray-400">¿Listo para llevar tu trading al siguiente nivel?</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Contact Form -->
+                <div class="card-gradient p-8 rounded-xl glow-border">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="nombre">Nombre Completo</label>
+                            <input 
+                                type="text" 
+                                id="nombre" 
+                                name="nombre"
+                                class="w-full bg-dark-bg border border-neon-green/30 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-green transition"
+                                placeholder="Tu nombre"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="email">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                class="w-full bg-dark-bg border border-neon-green/30 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-green transition"
+                                placeholder="tu@email.com"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="telefono">Teléfono (opcional)</label>
+                            <input 
+                                type="tel" 
+                                id="telefono" 
+                                name="telefono"
+                                class="w-full bg-dark-bg border border-neon-green/30 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-green transition"
+                                placeholder="+52 123 456 7890"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="mensaje">Mensaje</label>
+                            <textarea 
+                                id="mensaje" 
+                                name="mensaje"
+                                rows="4"
+                                class="w-full bg-dark-bg border border-neon-green/30 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-green transition"
+                                placeholder="Cuéntanos sobre tu experiencia en trading y qué servicio te interesa..."
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <button 
+                            type="submit"
+                            class="w-full bg-neon-green text-dark-bg font-bold px-6 py-4 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="card-gradient p-6 rounded-xl">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope text-neon-green text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Email</h4>
+                                <p class="text-gray-400">contacto@tradetech.global</p>
+                                <p class="text-gray-400">soporte@tradetech.global</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-gradient p-6 rounded-xl">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone text-electric-blue text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Soporte Técnico 24/7</h4>
+                                <p class="text-gray-400">+1 (555) 123-4567</p>
+                                <p class="text-sm text-gray-500 mt-1">Disponible las 24 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-gradient p-6 rounded-xl">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-neon-green text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Oficinas</h4>
+                                <p class="text-gray-400">Silicon Valley, California, USA</p>
+                                <p class="text-gray-400">Ciudad de México, México</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-gradient p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-4">Síguenos en Redes Sociales</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-dark-bg rounded-full flex items-center justify-center hover:bg-neon-green hover:text-dark-bg transition">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark-bg rounded-full flex items-center justify-center hover:bg-neon-green hover:text-dark-bg transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark-bg rounded-full flex items-center justify-center hover:bg-neon-green hover:text-dark-bg transition">
+                                <i class="fab fa-telegram text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-dark-bg rounded-full flex items-center justify-center hover:bg-neon-green hover:text-dark-bg transition">
+                                <i class="fab fa-discord text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card py-12 border-t border-neon-green/20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-chart-line text-neon-green text-2xl"></i>
+                        <span class="text-xl font-bold">TradeTech Global</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Innovación tecnológica al servicio del trading profesional. 
+                        Confianza, seguridad y resultados.
+                    </p>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold mb-4 text-neon-green">Servicios</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-neon-green transition">Terminal RSS</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Bot de Trading</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Análisis de Mercado</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold mb-4 text-neon-green">Recursos</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-neon-green transition">Guías de Usuario</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Tutoriales</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold mb-4 text-neon-green">Legal</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-neon-green transition">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Divulgación de Riesgos</a></li>
+                        <li><a href="#" class="hover:text-neon-green transition">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2024 TradeTech Global. Todos los derechos reservados.</p>
+                <p class="mt-2">
+                    <strong class="text-yellow-500">Advertencia de Riesgo:</strong> 
+                    El trading de criptomonedas y activos financieros conlleva un alto nivel de riesgo. 
+                    Nunca inviertas más de lo que puedes permitirte perder.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+            
+            // Simulate form submission (in production, this would call your backend API)
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
